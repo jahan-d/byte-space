@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiSearch, FiLayers, FiTrendingUp, FiStar } from 'react-icons/fi';
+import { FiSearch, FiStar } from 'react-icons/fi';
 import styles from './HeroSection.module.css';
 
 export default function HeroSection({ onSearch }) {

@@ -109,7 +109,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Social */}
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} ByteSpace. Built for the modern creator & learner.
+            © 2026 ByteSpace. Built for the modern creator & learner.
           </p>
 
           <div className={styles.legalLinks}>
