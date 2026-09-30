@@ -4,48 +4,60 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 40px var(--space-xl);
-  justify-content: center;
+  overflow: hidden;
+  padding: 30px var(--space-xl) 60px;
 }
 
-.backHomeBtn {
+/* Blueprint Grid Background */
+.gridOverlay {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-white);
-  font-weight: 500;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  transition: all var(--transition-fast);
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.backHomeBtn:hover {
-  background: rgba(255, 255, 255, 0.22);
+.topBar {
+  position: relative;
+  z-index: 2;
+  margin-bottom: var(--space-xl);
+}
+
+.brandLogo {
+  display: inline-flex;
+}
+
+/* Lime 'b' logo badge matching Figma */
+.logoBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: 800;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 14px rgba(210, 255, 0, 0.35);
 }
 
 .authContainer {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: var(--space-3xl);
   align-items: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 968px) {
   .authContainer {
     grid-template-columns: 1fr;
-    margin-top: 40px;
-  }
-
-  .leftCol {
-    display: none;
+    gap: var(--space-2xl);
   }
 }
 
@@ -54,123 +66,278 @@
   color: var(--color-white);
 }
 
-.brandLogo {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-2xl);
-  text-decoration: none;
-}
-
-.logoBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-circle);
-  background-color: var(--color-white);
-  color: var(--color-primary);
-  font-weight: 800;
-  font-size: 1.4rem;
-}
-
-.logoText {
-  color: var(--color-white);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
 .heroTitle {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   letter-spacing: -0.02em;
 }
 
 .heroSubtitle {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: var(--space-xl);
-  max-width: 440px;
-}
-
-.perksList {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
   margin-bottom: var(--space-2xl);
+  max-width: 480px;
 }
 
-.perkItem {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 500;
+/* Floating Cards Stage */
+.cardsStage {
+  position: relative;
+  height: 380px;
+  max-width: 500px;
 }
 
-.perkIcon {
-  width: 24px;
-  height: 24px;
+@media (max-width: 640px) {
+  .cardsStage {
+    display: none;
+  }
+}
+
+/* 3D Shapes */
+.shapeDonut {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 52px;
+  height: 52px;
+  border: 12px solid var(--color-accent);
   border-radius: 50%;
-  background-color: var(--color-accent);
-  color: var(--color-accent-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: bold;
+  z-index: 1;
 }
 
-/* Floating Preview Card */
-.floatingPreviewCard {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-xl);
-  padding: var(--space-lg);
-  max-width: 420px;
+.shapeTriangle {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 34px solid #E2FF4A;
+  transform: rotate(-25deg);
+  z-index: 4;
 }
 
-.previewStars {
+.shapeSquiggle {
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+  width: 38px;
+  height: 14px;
+  border-top: 6px solid var(--color-white);
+  border-radius: 50%;
+  transform: rotate(25deg);
+  z-index: 4;
+}
+
+/* Mini Cards */
+.miniCard {
+  position: absolute;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  color: var(--color-heading);
+  overflow: hidden;
+}
+
+.backCard {
+  top: 30px;
+  left: 10px;
+  width: 220px;
+  z-index: 2;
+  transform: rotate(-4deg);
+  opacity: 0.9;
+}
+
+.frontCard {
+  top: 40px;
+  left: 120px;
+  width: 260px;
+  z-index: 3;
+}
+
+.miniThumbnail {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.miniThumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.miniOverlayTags {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
   display: flex;
   gap: 4px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.miniOverlayTags span,
+.miniPill {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.miniCardBody {
+  padding: 12px 14px;
+}
+
+.miniTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.miniTitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.miniRating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.starIcon {
+  color: #F59E0B;
+  fill: #F59E0B;
+  font-size: 0.75rem;
+}
+
+.miniAuthor {
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  font-weight: 500;
   margin-bottom: 8px;
 }
 
-.star {
-  color: #F59E0B;
-  fill: #F59E0B;
-  font-size: 0.95rem;
-}
-
-.previewQuote {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--color-white);
-  font-style: italic;
-  margin-bottom: 12px;
-}
-
-.previewAuthor {
+.miniLevelRow,
+.miniLevel {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
 }
 
-.authorName {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--color-accent);
+.miniLevelRow {
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.authorRole {
+.miniAvatarRow {
+  display: flex;
+  align-items: center;
+}
+
+.miniAvatarRow img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  margin-left: -4px;
+  object-fit: cover;
+}
+
+.miniAvatarPlus {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  font-size: 0.55rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-white);
+  margin-left: -4px;
+}
+
+.miniPrice {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-text-light);
+}
+
+.miniPrice strong {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* Happy Badge */
+.happyBadge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.happyHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.happyTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.happyRating {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.happyAvatars {
+  display: flex;
+  align-items: center;
+}
+
+.happyAvatars img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-white);
+  margin-left: -5px;
+  object-fit: cover;
+}
+
+.happyPlus {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  font-size: 0.58rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-white);
+  margin-left: -5px;
 }
 
 /* Right Column: Card */
@@ -182,14 +349,14 @@
 .formCard {
   background-color: var(--color-white);
   border-radius: var(--radius-2xl);
-  padding: 40px;
+  padding: 44px 40px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   width: 100%;
-  max-width: 460px;
+  max-width: 440px;
 }
 
 @media (max-width: 480px) {
   .formCard {
-    padding: 24px;
+    padding: 28px 20px;
   }
 }

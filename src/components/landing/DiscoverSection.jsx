@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FiSliders, FiBarChart2, FiGrid, FiChevronDown } from 'react-icons/fi';
 import CategoryPill from '../common/CategoryPill';
 import CourseCard from '../common/CourseCard';
 import { categories, courses } from '../../data/courses';
@@ -6,6 +7,7 @@ import styles from './DiscoverSection.module.css';
 
 export default function DiscoverSection({ searchFilter = '' }) {
   const [activeCategory, setActiveCategory] = useState('Featured');
+  const [selectedLevel, setSelectedLevel] = useState('All');
 
   const filteredCourses = courses.filter((course) => {
     const matchesCategory =
@@ -15,7 +17,8 @@ export default function DiscoverSection({ searchFilter = '' }) {
         course.author.toLowerCase().includes(searchFilter.toLowerCase()) ||
         course.category.toLowerCase().includes(searchFilter.toLowerCase())
       : true;
-    return matchesCategory && matchesSearch;
+    const matchesLevel = selectedLevel === 'All' ? true : course.level === selectedLevel;
+    return matchesCategory && matchesSearch && matchesLevel;
   });
 
   return (
@@ -23,11 +26,31 @@ export default function DiscoverSection({ searchFilter = '' }) {
       <div className={`container ${styles.discoverContainer}`}>
         {/* Header */}
         <div className={styles.headerArea}>
-          <span className={styles.sectionBadge}>Top Rated Courses</span>
-          <h2 className="section-title">Discover Your Passion, Build Your Skills</h2>
-          <p className="section-subtitle">
+          <h2 className={styles.mainTitle}>Discover Your Passion, <br />Build Your Skills</h2>
+          <p className={styles.mainSubtitle}>
             At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.
           </p>
+        </div>
+
+        {/* Top Control Bar matching Figma */}
+        <div className={styles.filterControlBar}>
+          <div className={styles.leftFilters}>
+            <button className={styles.filterBtn}>
+              <FiSliders /> Filter
+            </button>
+            <div className={styles.dropdownBtn}>
+              <FiBarChart2 /> Level <FiChevronDown />
+            </div>
+            <div className={styles.dropdownBtn}>
+              <FiGrid /> Category <FiChevronDown />
+            </div>
+          </div>
+
+          <div className={styles.rightSort}>
+            <div className={styles.sortDropdown}>
+              <span>Most relevant</span> <FiChevronDown />
+            </div>
+          </div>
         </div>
 
         {/* Category Pills Bar */}
@@ -52,22 +75,18 @@ export default function DiscoverSection({ searchFilter = '' }) {
             ))
           ) : (
             <div className={styles.noCoursesFound}>
-              <p>No courses found matching "{searchFilter || activeCategory}".</p>
+              <p>No courses found matching your criteria.</p>
               <button
                 className={styles.resetBtn}
-                onClick={() => setActiveCategory('Featured')}
+                onClick={() => {
+                  setActiveCategory('Featured');
+                  setSelectedLevel('All');
+                }}
               >
                 Reset Filter
               </button>
             </div>
           )}
-        </div>
-
-        {/* Footer CTA */}
-        <div className={styles.footerCta}>
-          <button className={styles.exploreAllBtn}>
-            Explore All 1,200+ Courses
-          </button>
         </div>
       </div>
     </section>
