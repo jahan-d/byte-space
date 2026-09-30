@@ -1,6 +1,6 @@
 # ByteSpace — Online Course & Learning Platform
 
-> A modern, responsive e-learning platform website built from Figma designs. Features a complete interactive landing page and bonus authentication pages (Login and Signup).
+> A modern, responsive e-learning platform website built from Figma designs. Features a complete interactive landing page, interactive Course Details page, custom 404 page, and bonus authentication pages (Login and Signup).
 
 🔗 **Live Demo**: [https://bytespace-sooty.vercel.app](https://bytespace-sooty.vercel.app)  
 📁 **Repository**: [https://github.com/jahan-d/byte-space](https://github.com/jahan-d/byte-space)  
@@ -20,6 +20,7 @@
   - Floating 3D geometric accents (donut, triangle, squiggles).
 - **Partner Logos Bar**: 5 SVG brand logos (`Logoipsum`) in a clean horizontal strip.
 - **Discover Courses ("Discover Your Passion, Build Your Skills")**:
+  - Top filter control bar (`Filter`, `Level`, `Category`, `Most relevant` sort).
   - Interactive **Category Pills** (`Featured`, `Music`, `Drawing & Painting`, `Marketing`, `Animation`, `Social Media`, `UI/UX Design`, `Creative Marketing`, `Cooking`).
   - Live category & search filtering.
   - **3×3 Responsive Course Card Grid** (9 courses) with lesson count, duration, comments chips, difficulty level badge, star ratings, enrolled avatars, and `$25/lifetime` pricing.
@@ -28,9 +29,18 @@
 - **Testimonials**: 3 student reviews with 5-star ratings and enrolled course tags.
 - **Footer**: Newsletter subscription form with interactive feedback state, course links, categories, platform links, legal terms, and social media links.
 
-### 2. Bonus Auth Pages (Extra Credit)
+### 2. Course Details Page (`/course/:id`)
+- Video hero banner with play preview overlay.
+- Interactive curriculum tabs: `About`, `Lessons` (detailed breakdown), and `Reviews`.
+- Course description, "Sneak Peak" visual screenshot gallery, and "Key Learning Points" checklist.
+- Sticky enrollment sidebar card featuring price breakdown (`$25/lifetime`), 30-day money-back guarantee, and course perks checklist.
+
+### 3. Bonus Auth Pages (Extra Credit)
 - **Login Page (`/login`)**: Full-screen split layout on blue brand background with ByteSpace perks, testimonial quote, email & password form, Google & Apple social sign-in, and switch link to registration.
 - **Signup Page (`/signup`)**: Split layout with inputs for Full Name, Email, Password, terms agreement checkbox, and switch link to login.
+
+### 4. Custom 404 Page (`*`)
+- Clean 404 error page with ByteSpace branding and quick return link to the homepage.
 
 ---
 
