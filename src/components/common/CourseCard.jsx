@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { FiStar, FiBarChart2 } from 'react-icons/fi';
 import styles from './CourseCard.module.css';
 
 export default function CourseCard({ course }) {
   const {
+    id = 1,
     title,
     author = 'purepearl studio',
     rating = 4.5,
@@ -20,20 +22,22 @@ export default function CourseCard({ course }) {
   return (
     <div className={styles.card}>
       {/* Thumbnail with 3 overlay pills matching Figma */}
-      <div className={styles.thumbnailContainer}>
+      <Link to={`/course/${id}`} className={styles.thumbnailContainer}>
         <img src={thumbnail} alt={title} className={styles.thumbnail} loading="lazy" />
         <div className={styles.metaPillsOverlay}>
           <span className={styles.metaPill}>{lessons} Lessons</span>
           <span className={styles.metaPill}>{duration}</span>
           <span className={styles.metaPill}>{comments} Comments</span>
         </div>
-      </div>
+      </Link>
 
       {/* Card Content */}
       <div className={styles.cardBody}>
         {/* Title and Rating */}
         <div className={styles.titleRow}>
-          <h3 className={styles.courseTitle}>{title}</h3>
+          <Link to={`/course/${id}`}>
+            <h3 className={styles.courseTitle}>{title}</h3>
+          </Link>
           <div className={styles.ratingBox}>
             <span className={styles.ratingNumber}>{rating}</span>
             <FiStar className={styles.starIcon} />
