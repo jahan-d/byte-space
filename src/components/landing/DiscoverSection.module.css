@@ -1,0 +1,120 @@
+.discoverSection {
+  background-color: var(--color-bg-light);
+  padding: 80px 0 100px;
+}
+
+.discoverContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-xs);
+}
+
+/* Category Pills Bar */
+.pillsScrollWrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  scrollbar-width: thin;
+}
+
+.pillsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-width: max-content;
+  padding: 4px;
+}
+
+@media (max-width: 1024px) {
+  .pillsContainer {
+    justify-content: flex-start;
+  }
+}
+
+/* Grid */
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.noCoursesFound {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-4xl) 0;
+  color: var(--color-text-muted);
+}
+
+.resetBtn {
+  margin-top: var(--space-md);
+  padding: 8px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Footer CTA */
+.footerCta {
+  margin-top: var(--space-3xl);
+  display: flex;
+  justify-content: center;
+}
+
+.exploreAllBtn {
+  background-color: var(--color-white);
+  color: var(--color-heading);
+  border: 1.5px solid var(--color-border);
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.exploreAllBtn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}

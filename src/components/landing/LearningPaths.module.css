@@ -1,0 +1,126 @@
+.pathsSection {
+  background-color: var(--color-white);
+  padding: 90px 0 100px;
+}
+
+.pathsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-xs);
+  border: 1px solid var(--color-border);
+}
+
+.pathsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .pathsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pathsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pathCard {
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+}
+
+.pathCard:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.pathCard:hover .iconCircle {
+  transform: scale(1.08);
+}
+
+.pathInfo {
+  flex: 1;
+}
+
+.pathTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 2px;
+}
+
+.pathCount {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.arrowBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.pathCard:hover .arrowBox {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateX(3px);
+}
+
+.arrowIcon {
+  font-size: 1rem;
+}
