@@ -30,10 +30,15 @@ export default function Navbar({ cartCount = 0 }) {
           >
             Home
           </NavLink>
-          <a href="#courses" className={styles.navLink}>
+          <NavLink
+            to="/courses"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink
+            }
+          >
             Courses
-          </a>
-          <a href="#creators" className={styles.navLink}>
+          </NavLink>
+          <a href="/#creators" className={styles.navLink}>
             Creators
           </a>
         </nav>
@@ -72,15 +77,15 @@ export default function Navbar({ cartCount = 0 }) {
           >
             Home
           </NavLink>
-          <a
-            href="#courses"
+          <NavLink
+            to="/courses"
             onClick={() => setMobileMenuOpen(false)}
             className={styles.mobileNavLink}
           >
             Courses
-          </a>
+          </NavLink>
           <a
-            href="#creators"
+            href="/#creators"
             onClick={() => setMobileMenuOpen(false)}
             className={styles.mobileNavLink}
           >

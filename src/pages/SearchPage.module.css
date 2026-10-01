@@ -1,0 +1,247 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAFA;
+}
+
+/* Blue Search Hero Banner matching Figma */
+.searchHero {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 60px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.heroSubtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 6px 8px 6px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.searchIcon {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  margin-right: 12px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: var(--color-heading);
+}
+
+.searchBtn {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.searchBtn:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.02);
+}
+
+/* Results Container */
+.resultsContainer {
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+
+.controlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filterBtn,
+.dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover,
+.dropdown:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.resultsCount {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.resultsCount strong {
+  color: var(--color-heading);
+}
+
+/* Category Pills Bar */
+.pillsScrollWrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+  scrollbar-width: none;
+}
+
+.pillsScrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.pillsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+/* Grid */
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-text-muted);
+}
+
+.noResults h3 {
+  font-size: 1.4rem;
+  color: var(--color-heading);
+  margin-bottom: 8px;
+}
+
+.resetBtn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/* Pagination Bar */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pageNum,
+.pageArrow {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pageNum:hover,
+.pageArrow:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.activePage {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.dots {
+  padding: 0 6px;
+  color: var(--color-text-muted);
+}
