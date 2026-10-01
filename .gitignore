@@ -23,7 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Deployment
 .vercel
+
+# AI agent config — do not commit these
 .agents
-.agents
-REQUIREMENTS.md

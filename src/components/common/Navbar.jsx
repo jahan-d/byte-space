@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { FiShoppingCart, FiMenu, FiX } from 'react-icons/fi';
 import styles from './Navbar.module.css';
 
-export default function Navbar({ cartCount = 0 }) {
+export default function Navbar({ cartCount = 0, onCartClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -51,7 +51,11 @@ export default function Navbar({ cartCount = 0 }) {
           <Link to="/signup" className={styles.joinUsBtn}>
             Join Us
           </Link>
-          <button className={styles.cartBtn} aria-label="Shopping Cart">
+          <button
+            className={styles.cartBtn}
+            aria-label="Shopping Cart"
+            onClick={onCartClick}
+          >
             <FiShoppingCart className={styles.cartIcon} />
             {cartCount > 0 && <span className={styles.cartBadge}>{cartCount}</span>}
           </button>
