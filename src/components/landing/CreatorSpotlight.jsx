@@ -78,11 +78,11 @@ export default function CreatorSpotlight() {
         {/* Become a creator CTA */}
         <div className={styles.becomeCreatorBanner}>
           <div className={styles.bannerText}>
-            <h3>Want to share your expertise with 100,000+ students?</h3>
-            <p>Teach what you love. ByteSpace gives you the tools, audience, and platform to grow your creator business.</p>
+            <h3>Unlock Your Potential as a Creator with Bytespace</h3>
+            <p>Create & manage courses easily with our intuitive suite of creator tools. Reach hundreds of thousands of motivated learners worldwide.</p>
           </div>
           <button className={styles.joinCreatorBtn}>
-            Become an Instructor
+            Become a Creator
           </button>
         </div>
       </div>
