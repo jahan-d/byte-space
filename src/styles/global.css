@@ -1,0 +1,68 @@
+@import './variables.css';
+@import './reset.css';
+
+/* Global utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: var(--space-sm) auto 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}

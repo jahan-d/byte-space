@@ -1,0 +1,251 @@
+.footerWrapper {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  padding: 80px 0 40px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* Brand Column */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+}
+
+.logoBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.logoText {
+  color: var(--color-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brandDesc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  max-width: 380px;
+}
+
+.newsletterForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 380px;
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  gap: 8px;
+  transition: border-color var(--transition-fast);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary);
+}
+
+.mailIcon {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.emailInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--color-heading);
+}
+
+.emailInput::placeholder {
+  color: var(--color-text-light);
+}
+
+.subscribeBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(210, 255, 0, 0.35);
+}
+
+.subscribeBtn:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateX(2px);
+}
+
+.successMessage {
+  font-size: 0.85rem;
+  color: #10B981;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.privacyNote {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+  max-width: 360px;
+}
+
+/* Links Columns */
+.linksCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.colTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linksList a {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.linksList a:hover {
+  color: var(--color-primary);
+  transform: translateX(3px);
+}
+
+/* Divider */
+.footerDivider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: var(--space-xl);
+}
+
+/* Bottom Bar */
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.legalLinks a:hover {
+  color: var(--color-primary);
+}
+
+.dot {
+  color: var(--color-text-light);
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialLink {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--color-border);
+}
+
+.socialLink:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

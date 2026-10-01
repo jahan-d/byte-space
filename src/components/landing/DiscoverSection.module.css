@@ -1,0 +1,259 @@
+.discoverSection {
+  background-color: var(--color-bg-light);
+  padding: 80px 0 100px;
+}
+
+.discoverContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerArea {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+}
+
+.mainSubtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Filter Control Bar matching Figma */
+.filterControlBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 10;
+}
+
+.leftFilters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filterActive {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.filterActive:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropdownBtn:hover {
+  border-color: var(--color-primary);
+}
+
+.categoryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.categoryLabel strong {
+  color: var(--color-primary);
+}
+
+.rightSort {
+  display: flex;
+  align-items: center;
+}
+
+.sortDropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sortDropdown:hover {
+  border-color: var(--color-primary);
+}
+
+/* Dropdown Menu Overlay */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  min-width: 170px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sortMenu {
+  left: auto;
+  right: 0;
+  min-width: 190px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--color-heading);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+.selectedItem {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.checkIcon {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+/* Category Pills Bar */
+.pillsScrollWrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+  scrollbar-width: none;
+}
+
+.pillsScrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.pillsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+/* 3x3 Grid */
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.noCoursesFound {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-4xl) 0;
+  color: var(--color-text-muted);
+}
+
+.resetBtn {
+  margin-top: var(--space-md);
+  padding: 8px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+}

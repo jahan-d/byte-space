@@ -1,0 +1,124 @@
+.testimonialsSection {
+  background-color: var(--color-bg-light);
+  padding: 100px 0;
+}
+
+.testimonialsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-xs);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+.testimonialCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(0, 82, 255, 0.2);
+}
+
+.starsRow {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.starIcon {
+  color: #F59E0B;
+  fill: #F59E0B;
+  font-size: 1.1rem;
+}
+
+.quoteText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-heading);
+  margin-bottom: var(--space-lg);
+  flex: 1;
+}
+
+.courseTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F8FAFC;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.checkIcon {
+  color: #10B981;
+}
+
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.authorAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
